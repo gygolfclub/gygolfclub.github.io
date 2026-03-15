@@ -106,15 +106,15 @@
 
     .hero-bg {
       position: absolute; inset: 0;
-      background: url('https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=1800&q=80') center/cover no-repeat;
+      background: url('hero-collage.jpg') center center/cover no-repeat;
     }
     .hero-bg::after {
       content: '';
       position: absolute; inset: 0;
       background: linear-gradient(to bottom,
-        rgba(247,247,245,0.78) 0%,
-        rgba(247,247,245,0.62) 50%,
-        rgba(247,247,245,0.88) 100%);
+        rgba(247,247,245,0.92) 0%,
+        rgba(247,247,245,0.86) 50%,
+        rgba(247,247,245,0.95) 100%);
     }
 
     .hero-content {
@@ -259,7 +259,7 @@
     }
 
     h2 {
-      font-family: 'Noto Serif JP', serif;
+      font-family: 'Noto Sans JP', sans-serif;
       font-size: clamp(1.7rem, 3.2vw, 2.6rem);
       font-weight: 700;
       line-height: 1.4;
@@ -623,7 +623,6 @@
       white-space: nowrap;
     }
     .btn-line:hover { opacity: 0.88; transform: translateY(-2px); }
-    .btn-line .line-icon { font-size: 1.4rem; }
 
     .line-note {
       margin-top: 16px;
@@ -753,6 +752,7 @@
       max-width: 680px;
       margin: 0 auto;
     }
+    #access h2 { margin-bottom: 4px; }
 
     .access-list { list-style: none; margin-top: 20px; }
     .access-list li {
@@ -913,7 +913,7 @@
     <li><a href="#representative">代表紹介</a></li>
     <li><a href="#features">特徴</a></li>
     <li><a href="#gallery">ギャラリー</a></li>
-    <li><a href="#access">アクセス</a></li>
+    <li><a href="#access">活動エリア</a></li>
   </ul>
   <a href="#join" class="nav-btn">入会申込</a>
 </nav>
@@ -1091,8 +1091,7 @@
         ・お名前<br>
         ・年齢
       </div>
-      <a href="https://line.me/ti/p/mMTL_XV1_s" class="btn-line" target="_blank" rel="noopener" style="margin-top: 28px;">
-        <span class="line-icon">💚</span>
+      <a href="https://line.me/ti/p/mMTL_XV1_s" class="btn-line" target="_blank" rel="noopener" style="margin-top: 14px;">
         LINEで申し込む
       </a>
       <p class="line-note">ボタンを押すとLINEアプリが開きます</p>
@@ -1103,7 +1102,6 @@
 <!-- ACCESS -->
 <section id="access">
   <div class="access-info">
-    <span class="section-tag">Access</span>
     <h2>活動 <span class="accent">エリア</span></h2>
     <ul class="access-list">
       <li>
@@ -1166,7 +1164,7 @@
     <li><a href="#features">特徴</a></li>
     <li><a href="#join">入会申込</a></li>
     <li><a href="#instagram">Instagram</a></li>
-    <li><a href="#access">アクセス</a></li>
+    <li><a href="#access">活動エリア</a></li>
   </ul>
   <p class="footer-copy">© 2026 一般社団法人 GY Golf Club. All Rights Reserved.</p>
 </footer>
