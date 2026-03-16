@@ -27,14 +27,14 @@
       --card-shadow-hover: 0 10px 36px rgba(0,0,0,0.12);
     }
 
-    html { scroll-behavior: smooth; overflow-x: hidden; }
+    html { scroll-behavior: smooth; }
 
     body {
       background: var(--bg);
       color: var(--text);
       font-family: 'Noto Sans JP', sans-serif;
       line-height: 1.8;
-      overflow-x: hidden;
+      overflow-x: clip;
     }
 
     /* ===== NAV ===== */
@@ -1050,11 +1050,10 @@
       .faq-answer-inner { padding: 0 16px 16px 52px; font-size: 0.88rem; line-height: 1.9; }
       .faq-category-label { padding: 9px 16px; }
 
-      /* Global word-break */
-      .section-text { word-break: keep-all; }
-      p { word-break: keep-all; }
-      .feature-desc { word-break: keep-all; font-size: 0.88rem; }
-      .hero-sub { font-size: 0.88rem; word-break: keep-all; }
+      /* 文字折り返し - overflow-wrap で安全に */
+      * { overflow-wrap: break-word; word-break: normal; }
+      .feature-desc { font-size: 0.88rem; }
+      .hero-sub { font-size: 0.88rem; }
     }
 
     /* ===== FAQ ===== */
@@ -1266,7 +1265,7 @@
   <div class="features-header">
     <span class="section-tag">Why GY Golf Club</span>
     <h2>GY Golf Clubが<br><span class="accent">選ばれる6つの理由</span></h2>
-    <p class="features-lead">20代から50代まで、470名以上が続ける理由がここにあります。</p>
+    <p class="features-lead">20代から50代まで、<br>470名以上が続ける理由がここにあります。</p>
   </div>
   <div class="features-grid">
     <div class="feature-card fc-green">
