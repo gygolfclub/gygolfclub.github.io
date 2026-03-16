@@ -7,6 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    img { max-width: 100%; height: auto; }
 
     :root {
       --green: #2CC06A;
@@ -989,8 +990,9 @@
 
       /* About */
       #about { grid-template-columns: 1fr; gap: 44px; max-width: 100%; padding: 52px 20px; }
-      .about-img-wrap img { height: 260px; }
-      .about-badge-float { right: 8px; bottom: -12px; }
+      .about-img-wrap { overflow: hidden; }
+      .about-img-wrap img { height: 260px; max-width: 100%; }
+      .about-badge-float { right: 12px; bottom: 12px; padding: 12px 16px; }
       .section-text { font-size: 0.95rem; }
 
       /* Representative - full bleed image */
