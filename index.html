@@ -669,6 +669,7 @@
     }
     .fee-row:last-of-type { border-bottom: none; }
     .fee-label { color: var(--text); font-weight: 600; }
+    .fee-age { font-size: 0.75rem; font-weight: 400; color: var(--muted); margin-left: 4px; }
     .fee-amount { color: var(--green-dark); font-weight: 700; font-size: 1rem; }
     .fee-note {
       font-size: 0.78rem;
@@ -713,7 +714,7 @@
       margin-bottom: 18px;
     }
     .insta-handle {
-      font-family: 'Noto Serif JP', serif;
+      font-family: 'Noto Sans JP', sans-serif;
       font-size: 1.5rem;
       font-weight: 700;
       color: var(--text);
@@ -912,6 +913,97 @@
 
       /* h2 general */
       h2 { font-size: clamp(1.5rem, 6vw, 2.2rem); word-break: keep-all; }
+
+      /* FAQ responsive */
+      #faq { padding: 52px 20px; }
+      .faq-list { max-width: 100%; }
+    }
+
+    /* ===== FAQ ===== */
+    #faq {
+      background: var(--white);
+      padding: 88px 60px;
+    }
+    .faq-inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .faq-header {
+      text-align: center;
+      margin-bottom: 52px;
+    }
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+    }
+    .faq-item {
+      border-bottom: 1px solid #EAEAE8;
+    }
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 20px 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      cursor: pointer;
+      text-align: left;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text);
+      background: var(--white);
+      transition: background 0.2s;
+      line-height: 1.6;
+    }
+    .faq-question:hover { background: #F3FBF6; }
+    .faq-question .faq-q-mark {
+      flex-shrink: 0;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: var(--green-dark);
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .faq-question .faq-text { flex: 1; }
+    .faq-question .faq-chevron {
+      flex-shrink: 0;
+      width: 20px; height: 20px;
+      transition: transform 0.3s;
+      color: var(--muted);
+    }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.3s;
+      background: #F7FBF8;
+    }
+    .faq-item.open .faq-answer { max-height: 400px; }
+    .faq-answer-inner {
+      padding: 0 28px 22px 72px;
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 2;
+    }
+    .faq-category-label {
+      background: var(--green-light);
+      color: var(--green-dark);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      padding: 9px 28px;
+      border-bottom: 1px solid #EAEAE8;
     }
 
   </style>
@@ -927,6 +1019,7 @@
     <li><a href="#features">特徴</a></li>
     <li><a href="#gallery">ギャラリー</a></li>
     <li><a href="#access">活動エリア</a></li>
+    <li><a href="#faq">FAQ</a></li>
   </ul>
   <a href="#join" class="nav-btn">入会申込</a>
 </nav>
@@ -1082,13 +1175,13 @@
       ゴルフが好きな方なら、<br>経験・性別は問いません。<br>LINEからお気軽にご連絡ください。
     </p>
     <div class="fee-table">
-      <div class="fee-title">🏌️ 新規入会費（年齢51歳まで）</div>
+      <div class="fee-title">🏌️ 新規入会費</div>
       <div class="fee-row">
         <span class="fee-label">👩 女性</span>
         <span class="fee-amount">入会金 ¥1,000</span>
       </div>
       <div class="fee-row">
-        <span class="fee-label">👨 男性</span>
+        <span class="fee-label">👨 男性<span class="fee-age">（51歳まで）</span></span>
         <span class="fee-amount">入会金 ¥3,000</span>
       </div>
       <p class="fee-note">※ 再入会の場合は別途入会金がかかります</p>
@@ -1148,7 +1241,7 @@
       <svg width="13" height="13" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
       公式 Instagram
     </div>
-    <h2 class="insta-handle">@<span>gygolfclub_official</span></h2>
+    <h2 class="insta-handle"><span>@gygolfclub_official</span></h2>
     <p style="font-size:0.88rem; color:var(--muted); margin-bottom:0;">ゴルフ仲間との楽しい日常やイベント情報を発信中！</p>
     <div class="insta-qr-wrap">
       <div>
@@ -1168,6 +1261,117 @@
   </div>
 </section>
 
+<!-- FAQ -->
+<section id="faq">
+  <div class="faq-inner">
+    <div class="faq-header">
+      <span class="section-tag">FAQ</span>
+      <h2>よくある<span class="accent">ご質問</span></h2>
+      <p class="section-text" style="margin:0 auto; text-align:left; max-width:480px; word-break:keep-all; overflow-wrap:anywhere;">入会前に気になるご質問をまとめました。<br>その他のご質問はLINEよりお気軽にどうぞ。</p>
+    </div>
+    <div class="faq-list">
+
+      <!-- 初心者・レッスンについて -->
+      <div class="faq-category-label">🏌️ 初心者・レッスンについて</div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-q-mark">Q</span>
+          <span class="faq-text">ラウンド経験がほとんどないのですが大丈夫ですか？</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">大丈夫です。レベル不問で参加できます。<br>初心者向けに打ちっぱなし企画も定期開催しているので、まずはそこから参加するのがおすすめです。</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-q-mark">Q</span>
+          <span class="faq-text">プロのレッスンは受けられますか？</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">はい。初心者向けにプロゴルファーによるラウンドレッスンを受けることができます。<br>ゴルフを始めたばかりの方も安心してご参加ください。</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-q-mark">Q</span>
+          <span class="faq-text">女性メンバーはどのくらいいますか？</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">女性メンバーも多く参加しており、和やかな雰囲気です。<br>女性一人での参加も多いので、安心してご参加ください。</div>
+        </div>
+      </div>
+
+      <!-- ラウンド当日について -->
+      <div class="faq-category-label">⛳ ラウンド当日について</div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-q-mark">Q</span>
+          <span class="faq-text">道具は何を持っていけばいいですか？</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">ゴルフセット・シューズはゴルフ場でレンタル可能です。<br>ご自身で用意するのはウェア一式・手袋・ティ・ボールのみです。<br>手ぶらに近い状態で参加することも可能です。<br>詳しくはGYgolfclubまでお問い合わせください。</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-q-mark">Q</span>
+          <span class="faq-text">車で行きますが、到着したらどこに行けばいいですか？</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">駐車場に停めた後、クラブハウス受付周辺へお越しください。<br>GYgolfclubのメンバーが受付周辺におりますので、こちらから声をかけます。<br>安心してお越しください。</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-q-mark">Q</span>
+          <span class="faq-text">ラウンド後の流れはどうなりますか？</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">ラウンド終了後は表彰式を行います。<br>スコア発表・表彰など和やかな雰囲気で30分程度です。</div>
+        </div>
+      </div>
+
+      <!-- イベント・交流について -->
+      <div class="faq-category-label">🎉 イベント・交流について</div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-q-mark">Q</span>
+          <span class="faq-text">懇親会（飲み会）はありますか？</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">はい、コンペとは別に定期的に懇親会（飲み会）を開催しています。<br>参加は任意です。</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-q-mark">Q</span>
+          <span class="faq-text">一人で参加しても大丈夫ですか？</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">大丈夫です。一人参加の方が多く、初参加でもメンバーから積極的に声をかけます。<br>初参加の方もすぐに打ち解けられる雰囲気です。</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">⛳ GY Golf Club</div>
@@ -1178,6 +1382,7 @@
     <li><a href="#join">入会申込</a></li>
     <li><a href="#instagram">Instagram</a></li>
     <li><a href="#access">活動エリア</a></li>
+    <li><a href="#faq">FAQ</a></li>
   </ul>
   <p class="footer-copy">© 2026 一般社団法人 GY Golf Club. All Rights Reserved.</p>
 </footer>
@@ -1187,6 +1392,13 @@
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 60);
   });
+
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
 </script>
 
 </body>
